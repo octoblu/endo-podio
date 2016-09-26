@@ -1,0 +1,14 @@
+{
+  type: 'object'
+  title: 'Get Items'
+  'x-group-name': 'Items'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        username:
+          type: 'string'
+          title: 'Username'
+          description: 'Github username or organization name'
+}
