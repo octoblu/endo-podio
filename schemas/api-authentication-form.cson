@@ -1,9 +1,0 @@
-[
-  {
-    key: "username"
-  }
-  {
-    key: "password"
-    type: "password"
-  }
-]

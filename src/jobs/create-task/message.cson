@@ -1,0 +1,59 @@
+{
+  type: 'object'
+  title: 'Create Task'
+  'x-group-name': 'Tasks'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        text:
+          title: 'Text'
+          type: 'string'
+        task_description:
+          type: 'string'
+          title: 'Description'
+        private:
+          type: 'boolean'
+        due_on:
+          type: 'string'
+          title: 'Due On (UTC)'
+        reminder:
+          type: 'number'
+          title: 'Minutes before Due Date Reminder'
+        responsible:
+          type: 'string'
+          title: 'Contact Responsible (user_id)'
+        labels:
+          title: 'Labels as Text'
+          type: 'array'
+          items:
+            title: 'label'
+            type: 'string'
+        label_ids:
+          title: 'Labels as Ids'
+          type: 'array'
+          items:
+            title: 'label_id'
+            type: 'string'
+        file_ids:
+          title: 'File to Attach'
+          type: 'array'
+          items:
+            title: 'file_id'
+            type: 'string'
+        ref_type:
+          title: 'Ref Type (Optional)'
+          type: 'string'
+        ref_id:
+          title: 'Ref ID (Optional)'
+          type: 'string'
+        hook:
+          type: 'boolean'
+          default: true
+          description: 'True if hooks should be executed for the change, false otherwise.'
+        silent:
+          type: 'boolean'
+          default: false
+          description: 'If set to true, the object will not be bumped up in the stream and notifications will not be generated.'
+}

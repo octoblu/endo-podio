@@ -1,0 +1,42 @@
+{
+  type: 'object'
+  title: 'Get All Apps'
+  'x-group-name': 'Applications'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        text:
+          type: 'string'
+          title: 'Search Text'
+        exclude_app_ids:
+          type: 'string'
+          title: 'Exclude App Ids'
+          description: 'Comma separated list of app_ids to exclude from the returned list.'
+        exclude_demo:
+          title: 'Exclude Demo Apps'
+          description: 'Check true if apps from demo workspace should be excluded'
+          type: 'boolean'
+          default: false
+        limit:
+          type: 'number'
+          default: 4
+        order:
+          title: 'Order By'
+          type: 'string'
+          enum: [
+            'score'
+            'name'
+          ]
+        referenceable_in_org:
+          title: 'Filter by Organization ID'
+          type: 'string'
+        right:
+          title: 'User Right'
+          description: 'The right the user must have on the returned apps.'
+          type: 'string'
+        target_space_id:
+          type: 'string'
+          description: 'The id of the space we prefer the apps to come from. This will usually be the users current workspace.'
+}

@@ -1,0 +1,25 @@
+{
+  type: 'object'
+  title: 'Search Items'
+  'x-group-name': 'Items'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        field_id:
+          type: 'string'
+          title: 'Field ID'
+        limit:
+          title: 'Limit'
+          type: 'number'
+          default: 13
+        text:
+          type: 'string'
+          title: 'Search String'
+        not_item_id:
+          type: 'array'
+          title: 'Not these Item Ids'
+          items:
+            type: 'string'
+}

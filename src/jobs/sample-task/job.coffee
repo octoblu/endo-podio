@@ -2,14 +2,14 @@ http   = require 'http'
 _      = require 'lodash'
 PodioRequest = require '../../podio-request.coffee'
 
-class GetPersonalTasks
+class SampleTask
   constructor: ({@encrypted}) ->
     @podio = new PodioRequest @encrypted.secrets.credentials.secret
 
   do: ({data}, callback) =>
     # return callback @_userError(422, 'data.username is required') unless data.username?
 
-    @podio.request 'GET', 'task/personal/summary', null, null, (error, body) =>
+    @podio.request '', '', null, null, (error, body) =>
       return callback @_userError(401, error) if error?
       return callback null, {
         metadata:
@@ -23,4 +23,4 @@ class GetPersonalTasks
     error.code = code
     return error
 
-module.exports = GetPersonalTasks
+module.exports = SampleTask

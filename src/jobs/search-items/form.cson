@@ -1,0 +1,8 @@
+{
+  angular: [
+    'data.field_id'
+    'data.limit'
+    'data.text'
+    'data.not_item_id'
+  ]
+}
