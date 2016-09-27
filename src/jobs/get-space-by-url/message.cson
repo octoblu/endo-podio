@@ -1,0 +1,22 @@
+{
+  type: 'object'
+  title: 'Get Space by Url'
+  'x-group-name': 'Spaces'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        org_slug:
+          type: 'string'
+          title: 'Organization Slug'
+          description: 'The org of the slug to search for'
+        space_slug:
+          type: 'string'
+          title: 'Space Slug'
+          description: 'The slug of the url to search for'
+        url:
+          type: 'string'
+          title: 'URL'
+          description: 'The full URL of the space'
+}

@@ -2,12 +2,13 @@ http   = require 'http'
 _      = require 'lodash'
 PodioRequest = require '../../podio-request.coffee'
 
-class GetAllApps
+class GetSpaceByUrl
   constructor: ({@encrypted}) ->
     @podio = new PodioRequest @encrypted.secrets.credentials.secret
 
   do: ({data}, callback) =>
-    @podio.request 'GET', 'app/', data, null, (error, body) =>
+    return callback @_userError(422, 'data.url is required') unless data.url?
+    @podio.request 'GET', 'space/url', data, null, (error, body) =>
       return callback @_userError(401, error) if error?
       return callback null, {
         metadata:
@@ -21,4 +22,4 @@ class GetAllApps
     error.code = code
     return error
 
-module.exports = GetAllApps
+module.exports = GetSpaceByUrl

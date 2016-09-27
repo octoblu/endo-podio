@@ -1,0 +1,10 @@
+{
+  angular: [
+    'data.space_id'
+    'data.value'
+    'data.embed_url'
+    'data.question'
+    'data.file_ids'
+    'data.alert_invite'
+  ]
+}

@@ -18,11 +18,12 @@
         due_on:
           type: 'string'
           title: 'Due On (UTC)'
+          default: 'YYYY-MM-DD HH:MM:SS'
         reminder:
           type: 'number'
           title: 'Minutes before Due Date Reminder'
         responsible:
-          type: 'string'
+          type: 'number'
           title: 'Contact Responsible (user_id)'
         labels:
           title: 'Labels as Text'

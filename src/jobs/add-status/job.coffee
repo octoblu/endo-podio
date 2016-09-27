@@ -2,37 +2,29 @@ http   = require 'http'
 _      = require 'lodash'
 PodioRequest = require '../../podio-request.coffee'
 
-class CreateTask
+class AddStatus
   constructor: ({@encrypted}) ->
     @podio = new PodioRequest @encrypted.secrets.credentials.secret
 
   do: ({data}, callback) =>
-    # return callback @_userError(422, 'data.username is required') unless data.username?
+    return callback @_userError(422, 'data.space_id is required') unless data.space_id?
+    return callback @_userError(422, 'data.value is required') unless data.value?
+
+    path = 'status/space/' + data.space_id
     qs = {
-      hook: data.hook
-      silent: data.silent
+      alert_invite: data.alert_invite
     }
 
     body = {
-      text: data.text
-      description: data.task_description
-      private: data.private
-      due_on: data.due_on
-      responsible: data.responsible
-      reminder:
-        remind_delta: data.reminder
+      value: data.value
     }
 
-
-    body.ref_type = data.ref_type if data.ref_type?
-    body.ref_id = data.ref_id if data.ref_id?
-    body.labels = @_filterArrays data.labels
-    body.label_ids = @_filterArrays data.label_ids
+    data.question.options = @_filterArrays data.question.options
     body.file_ids = @_filterArrays data.file_ids
+    body.embed_url = data.embed_url if data.embed_url? && data.embed_url != ''
+    body.question = data.question if !_.isEmpty(data.question) && data.question.text?
 
-    console.log body
-
-    @podio.request 'POST', 'task/', qs, body, (error, body) =>
+    @podio.request 'POST', path, qs, body, (error, body) =>
       return callback @_userError(401, error) if error?
       return callback null, {
         metadata:
@@ -49,4 +41,4 @@ class CreateTask
     error.code = code
     return error
 
-module.exports = CreateTask
+module.exports = AddStatus

@@ -1,0 +1,7 @@
+{
+  angular: [
+    'data.url'
+    'data.org_slug'
+    'data.space_slug'
+  ]
+}
