@@ -1,0 +1,10 @@
+type: "object"
+properties:
+  username:
+    title: "Username"
+    type: "string"
+    minLength: 1
+  password:
+    title: "Password"
+    type: "string"
+    minLength: 1

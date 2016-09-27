@@ -1,0 +1,9 @@
+{
+  type: 'object'
+  title: 'Get Personal Task Summary'
+  'x-group-name': 'Tasks'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+}

@@ -50,8 +50,9 @@
     "morgan": "^1.6.1",
     "passport": "^0.3.2",
     "passport-octoblu": "^2.0.1",
-    "passport-podio": "0.0.3",
-    "podio-js": "^1.5.0"
+    "passport-strategy": "^1.0.0",
+    "podio-js": "^1.5.0",
+    "request": "^2.75.0"
   },
   "peerDependencies": {},
   "engines": {
