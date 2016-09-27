@@ -18,6 +18,27 @@ $ npm install endo-podio
 console.log('hello world!');
 ```
 
+## Endpoints
+- [X] Create Task
+- [X] Get Personal Task
+- [X] Search Items
+- [ ] Add New Item
+- [X] Get All Apps
+- [ ] Get Task Summary
+- [ ] Add New Status Message
+- [ ] Get App Values
+- [ ] Filter Items by View
+- [ ] Get Item
+- [ ] Validate Hook Verification
+- [ ] Get A Comment
+- [ ] Get Item Revision Difference
+- [ ] Get Space By URL
+- [ ] Search In Space V2
+- [ ] Get User Contact
+- [ ] Get Notifications
+- [ ] Get Calendar Summary
+- [ ] Get Organization Members
+
 ## License
 
 The MIT License (MIT)
