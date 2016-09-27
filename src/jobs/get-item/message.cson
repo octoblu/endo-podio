@@ -1,0 +1,15 @@
+{
+  type: 'object'
+  title: 'Get Item'
+  'x-group-name': 'Items'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        item_id:
+          type: 'string'
+        mark_as_viewed:
+          type: 'boolean'
+          default: true
+}

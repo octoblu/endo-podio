@@ -1,0 +1,12 @@
+{
+  type: 'object'
+  title: 'Filter Items'
+  'x-group-name': 'Items'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        app_id:
+          type: 'string'
+}

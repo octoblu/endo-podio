@@ -1,0 +1,12 @@
+{
+  type: 'object'
+  title: 'Get Answers'
+  'x-group-name': 'Questions'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        question_id:
+          type: 'string'
+}

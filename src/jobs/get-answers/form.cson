@@ -1,0 +1,5 @@
+{
+  angular: [
+    'data.question_id'
+  ]
+}

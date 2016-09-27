@@ -1,0 +1,8 @@
+{
+  angular: [
+    'data.url'
+    'data.event_type'
+    'data.ref_id'
+    'data.ref_type'
+  ]
+}

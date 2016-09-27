@@ -1,0 +1,6 @@
+{
+  angular: [
+    'data.item_id'
+    'data.mark_as_viewed'
+  ]
+}

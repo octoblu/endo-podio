@@ -1,0 +1,18 @@
+{
+  type: 'object'
+  title: 'Create Hook'
+  'x-group-name': 'Hooks'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        url:
+          type: 'string'
+        event_type:
+          type: 'string'
+        ref_type:
+          type: 'string'
+        ref_id:
+          type: 'string'
+}

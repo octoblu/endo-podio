@@ -24,20 +24,23 @@ console.log('hello world!');
 - [X] Search Items
 - [ ] Add New Item
 - [X] Get All Apps
-- [ ] Get Task Summary
-- [ ] Add New Status Message
+- [X] Get Task Summary
+- [X] Add New Status Message
 - [ ] Get App Values
-- [ ] Filter Items by View
-- [ ] Get Item
-- [ ] Validate Hook Verification
+- [X] Filter Items
+- [X] Get Item
+- [X] Validate Hook Verification
+- [X] Request Hook Validation
 - [ ] Get A Comment
 - [ ] Get Item Revision Difference
-- [ ] Get Space By URL
+- [X] Get Space By URL
 - [ ] Search In Space V2
 - [ ] Get User Contact
 - [ ] Get Notifications
 - [ ] Get Calendar Summary
 - [ ] Get Organization Members
+- [X] Create Hook
+- [X] Get Answers
 
 ## License
 

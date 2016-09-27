@@ -1,0 +1,12 @@
+{
+  type: 'object'
+  title: 'Request Hook Validation'
+  'x-group-name': 'Hooks'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        hook_id:
+          type: 'string'
+}

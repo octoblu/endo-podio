@@ -2,24 +2,14 @@ http   = require 'http'
 _      = require 'lodash'
 PodioRequest = require '../../podio-request.coffee'
 
-class SearchItems
+class GetItem
   constructor: ({@encrypted}) ->
     @podio = new PodioRequest @encrypted.secrets.credentials.secret
 
   do: ({data}, callback) =>
-    return callback @_userError(422, 'data.field_id is required') unless data.field_id?
-    return callback @_userError(422, 'data.limit is required') unless data.limit?
+    return callback @_userError(422, 'data.item_id is required') unless data.item_id?
 
-    { limit, not_item_id, text, field_id } = data
-
-    path = 'item/field/' + field_id + '/find'
-    qs = {
-      limit: limit
-      not_item_id: not_item_id,
-      text: text
-    }
-
-    @podio.request 'GET', path, qs, null, (error, body) =>
+    @podio.request 'GET', "item/#{data.item_id}", data, null, (error, body) =>
       return callback @_userError(401, error) if error?
       return callback null, {
         metadata:
@@ -33,4 +23,4 @@ class SearchItems
     error.code = code
     return error
 
-module.exports = SearchItems
+module.exports = GetItem
