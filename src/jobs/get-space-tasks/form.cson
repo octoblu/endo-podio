@@ -1,0 +1,6 @@
+{
+  angular: [
+    'data.space_id'
+    'data.limit'
+  ]
+}

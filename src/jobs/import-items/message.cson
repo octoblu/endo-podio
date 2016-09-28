@@ -1,0 +1,34 @@
+{
+  type: 'object'
+  title: 'Import Items'
+  'x-group-name': 'Importer'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        file_id:
+          type: 'string'
+        app_id:
+          type: 'string'
+        mappings:
+          type: 'array'
+          items:
+            type: 'object'
+            properties:
+              field_id:
+                type: 'string'
+              unique:
+                type: 'boolean'
+                description: 'True of the values for the field is unique, false otherwise'
+                default: false
+              value:
+                type: 'string'
+                description: 'Which value should be mapped for the field, depends on the type of field'
+        tags_column_id:
+          type: 'string'
+          description: 'The id of the column to read tags from, if any'
+        app_item_id_column_id:
+          type: 'string'
+          description: 'The id of the column to read the app item id from, if any'
+}

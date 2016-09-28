@@ -8,11 +8,42 @@
       type: 'object'
       properties:
         url:
+          title: 'Webhook URL'
           type: 'string'
         event_type:
           type: 'string'
+          title: 'Event Type'
+          enum: [
+            'item.create'
+            'item.update'
+            'item.delete'
+            'comment.create'
+            'comment.delete'
+            'file.change'
+            'app.update'
+            'app.delete'
+            'form.create'
+            'form.update'
+            'form.delete'
+            'app.create'
+            'task.create'
+            'task.update'
+            'task.delete'
+            'member.add'
+            'member.remove'
+            'status.create'
+            'status.update'
+            'status.delete'
+          ]
         ref_type:
           type: 'string'
+          title: 'Reference Type'
+          enum: [
+            'app'
+            'app_field'
+            'space'
+          ]
         ref_id:
+          title: 'Reference Id (app_id | field_id | space_id)'
           type: 'string'
 }

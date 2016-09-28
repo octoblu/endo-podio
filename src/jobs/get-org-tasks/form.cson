@@ -1,0 +1,6 @@
+{
+  angular: [
+    'data.org_id'
+    'data.limit'
+  ]
+}

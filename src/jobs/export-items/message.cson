@@ -1,0 +1,44 @@
+{
+  type: 'object'
+  title: 'Export Items'
+  'x-group-name': 'Items'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        app_id:
+          type: 'string'
+        exporter:
+          type: 'string'
+          enum: [
+            'xls'
+            'xlsx'
+          ]
+        limit:
+          type: 'number'
+          description: 'The maximum number of items to export, if any'
+        offset:
+          type: 'number'
+          description: 'The offset into the list of items to export'
+        view_id:
+          type: 'string'
+          description: 'The id of the view to use, 0 means last used view, blank means no view'
+        sort_by:
+          type: 'string'
+          description: 'The sorting order if not using predefined filter'
+        sort_desc:
+          type: 'boolean'
+          description: 'True if sorting should be descending, false otherwise'
+          default: false
+        filters:
+          type: 'string'
+        split_email_by_type:
+          description: 'False if email fields should be grouped together, True (default) otherwise'
+          type: 'boolean'
+          default: true
+        split_phone_by_type:
+          description: 'False if email fields should be grouped together, True (default) otherwise'
+          type: 'boolean'
+          default: true
+}

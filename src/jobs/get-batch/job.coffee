@@ -2,16 +2,14 @@ http   = require 'http'
 _      = require 'lodash'
 PodioRequest = require '../../podio-request.coffee'
 
-class ValidateHooks
+class GetBatch
   constructor: ({@encrypted}) ->
     @podio = new PodioRequest @encrypted.secrets.credentials.secret
 
   do: ({data}, callback) =>
-    return callback @_userError(422, 'data.hook_id is required') unless data.hook_id?
-    body = {
-        code: data.code
-      }
-    @podio.request 'POST', "hook/#{data.hook_id}/verify/validate", null, body, (error, body) =>
+    return callback @_userError(422, 'data.batch_id is required') unless data.batch_id?
+
+    @podio.request 'GET', "batch/#{batch_id}", null, null, (error, body) =>
       return callback @_userError(401, error) if error?
       return callback null, {
         metadata:
@@ -25,4 +23,4 @@ class ValidateHooks
     error.code = code
     return error
 
-module.exports = ValidateHooks
+module.exports = GetBatch

@@ -1,0 +1,15 @@
+{
+  type: 'object'
+  title: 'Get Organization Task Summary'
+  'x-group-name': 'Tasks'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        org_id:
+          type: 'string'
+        limit:
+          type: 'integer'
+          default: 4
+}

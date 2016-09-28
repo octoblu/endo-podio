@@ -1,0 +1,7 @@
+{
+  angular: [
+    'data.org_label'
+    'data.space_label'
+    'data.app_label'
+  ]
+}

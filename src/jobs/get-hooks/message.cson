@@ -1,0 +1,21 @@
+{
+  type: 'object'
+  title: 'Get Hooks'
+  'x-group-name': 'Hooks'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        ref_type:
+          title: 'Reference Type'
+          type: 'string'
+          enum: [
+            'app'
+            'app_field'
+            'space'
+          ]
+        ref_id:
+          type: 'string'
+          title: 'Reference ID (app_id | app_field_id | space_id)'
+}

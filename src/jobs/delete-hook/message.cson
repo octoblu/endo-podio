@@ -1,6 +1,6 @@
 {
   type: 'object'
-  title: 'Validate Hook Verification'
+  title: 'Delete Hook'
   'x-group-name': 'Hooks'
   required: ['data']
   properties:
@@ -8,7 +8,5 @@
       type: 'object'
       properties:
         hook_id:
-          type: 'string'
-        code:
           type: 'string'
 }

@@ -1,0 +1,6 @@
+{
+  angular: [
+    'data.file_id'
+    'data.app_id'
+  ]
+}

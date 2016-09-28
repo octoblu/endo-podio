@@ -2,16 +2,18 @@ http   = require 'http'
 _      = require 'lodash'
 PodioRequest = require '../../podio-request.coffee'
 
-class ValidateHooks
+class GetOrgTasks
   constructor: ({@encrypted}) ->
     @podio = new PodioRequest @encrypted.secrets.credentials.secret
 
   do: ({data}, callback) =>
-    return callback @_userError(422, 'data.hook_id is required') unless data.hook_id?
-    body = {
-        code: data.code
-      }
-    @podio.request 'POST', "hook/#{data.hook_id}/verify/validate", null, body, (error, body) =>
+    return callback @_userError(422, 'data.org_id is required') unless data.org_id?
+    { org_id, limit } = data
+    qs = {
+      limit: limit
+    }
+
+    @podio.request 'GET', "task/org/#{org_id}/summary", qs, null, (error, body) =>
       return callback @_userError(401, error) if error?
       return callback null, {
         metadata:
@@ -25,4 +27,4 @@ class ValidateHooks
     error.code = code
     return error
 
-module.exports = ValidateHooks
+module.exports = GetOrgTasks

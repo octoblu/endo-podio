@@ -2,16 +2,16 @@ http   = require 'http'
 _      = require 'lodash'
 PodioRequest = require '../../podio-request.coffee'
 
-class ValidateHooks
+class GetAppByLabel
   constructor: ({@encrypted}) ->
     @podio = new PodioRequest @encrypted.secrets.credentials.secret
 
   do: ({data}, callback) =>
-    return callback @_userError(422, 'data.hook_id is required') unless data.hook_id?
-    body = {
-        code: data.code
-      }
-    @podio.request 'POST', "hook/#{data.hook_id}/verify/validate", null, body, (error, body) =>
+    return callback @_userError(422, 'data.org_label is required') unless data.org_label?
+
+    { org_label, space_label, app_label } = data
+
+    @podio.request 'GET', "app/org/#{org_label}/space/#{space_label}/#{app_label}", null, null, (error, body) =>
       return callback @_userError(401, error) if error?
       return callback null, {
         metadata:
@@ -25,4 +25,4 @@ class ValidateHooks
     error.code = code
     return error
 
-module.exports = ValidateHooks
+module.exports = GetAppByLabel

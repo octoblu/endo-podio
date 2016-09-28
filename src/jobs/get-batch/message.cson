@@ -1,14 +1,12 @@
 {
   type: 'object'
-  title: 'Validate Hook Verification'
-  'x-group-name': 'Hooks'
+  title: 'Get Batch'
+  'x-group-name': 'Batch'
   required: ['data']
   properties:
     data:
       type: 'object'
       properties:
-        hook_id:
-          type: 'string'
-        code:
+        batch_id:
           type: 'string'
 }

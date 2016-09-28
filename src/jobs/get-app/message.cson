@@ -1,14 +1,12 @@
 {
   type: 'object'
-  title: 'Validate Hook Verification'
-  'x-group-name': 'Hooks'
+  title: 'Get App by Id'
+  'x-group-name': 'Applications'
   required: ['data']
   properties:
     data:
       type: 'object'
       properties:
-        hook_id:
-          type: 'string'
-        code:
+        app_id:
           type: 'string'
 }

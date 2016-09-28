@@ -1,0 +1,6 @@
+{
+  angular: [
+    'data.ref_type'
+    'data.ref_id'
+  ]
+}
