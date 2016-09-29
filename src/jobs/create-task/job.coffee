@@ -30,7 +30,6 @@ class CreateTask
     body.label_ids = @_filterArrays data.label_ids
     body.file_ids = @_filterArrays data.file_ids
 
-    console.log body
 
     @podio.request 'POST', 'task/', qs, body, (error, body) =>
       return callback @_userError(401, error) if error?
