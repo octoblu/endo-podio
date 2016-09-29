@@ -1,0 +1,17 @@
+{
+  type: 'object'
+  title: 'Copy Item to App'
+  'x-group-name': 'Items'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        item_id:
+          type: 'string'
+          title: 'Item ID'
+          description: 'The item to copy'
+        app_id:
+          type: 'string'
+          title: 'Destination App ID'
+}
