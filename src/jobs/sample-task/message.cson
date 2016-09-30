@@ -1,9 +1,0 @@
-{
-  type: 'object'
-  title: 'Sample Task'
-  'x-group-name': 'Tasks'
-  required: ['data']
-  properties:
-    data:
-      type: 'object'
-}
