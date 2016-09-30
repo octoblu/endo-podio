@@ -1,10 +1,10 @@
 {
   "name": "endo-podio",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Put some description here",
   "keywords": [],
-  "homepage": "https://github.com/octoblu/podio",
-  "bugs": "https://github.com/octoblu/podio/issues",
+  "homepage": "https://github.com/octoblu/endo-podio",
+  "bugs": "https://github.com/octoblu/endo-podio/issues",
   "author": {
     "name": "Octoblu",
     "url": "https://github.com/octoblu"
@@ -12,7 +12,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/octoblu/podio.git"
+    "url": "https://github.com/octoblu/endo-podio.git"
   },
   "scripts": {
     "start": "node command.js",
