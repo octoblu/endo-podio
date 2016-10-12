@@ -20,4 +20,19 @@ class PodioRequest
     request options, (error, res, body) =>
       callback error, body
 
+  downloadFile: (method, file_id, qs, body, callback) =>
+    options = {
+      uri: "https://files.podio.com/#{file_id}"
+      method: method
+      json: true
+      headers:
+        Authorization: 'OAuth2 ' + @access_token
+    }
+
+    options.qs = qs if qs?
+    options.body = body if body?
+
+    request options, (error, res, body) =>
+      callback error, body
+
 module.exports = PodioRequest

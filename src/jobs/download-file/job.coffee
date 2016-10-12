@@ -9,14 +9,13 @@ class DownloadFile
   do: ({data}, callback) =>
     return callback @_userError(422, 'data.file_id is required') unless data.file_id?
 
-    @podio.request 'GET', "file/#{data.file_id}/raw", data, null, (error, body) =>
+    @podio.downloadFile 'GET', data.file_id, null, null, (error, body) =>
       return callback @_userError(401, error) if error?
       return callback null, {
         metadata:
           code: 200
           status: http.STATUS_CODES[200]
-        data:
-          raw: body
+        data: body
       }
 
   _userError: (code, message) =>

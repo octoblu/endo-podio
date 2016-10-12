@@ -1,6 +1,6 @@
 {
   type: 'object'
-  title: 'Download File'
+  title: 'Download File < 1mb'
   'x-group-name': 'Files'
   required: ['data']
   properties:
@@ -9,4 +9,5 @@
       properties:
         file_id:
           type: 'string'
+          description: "Will return msg.data containing the raw data of the file."
 }
