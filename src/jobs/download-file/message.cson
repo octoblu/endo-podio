@@ -1,0 +1,12 @@
+{
+  type: 'object'
+  title: 'Download File'
+  'x-group-name': 'Files'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        file_id:
+          type: 'string'
+}

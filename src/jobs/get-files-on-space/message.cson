@@ -1,0 +1,12 @@
+{
+  type: 'object'
+  title: 'Get Files on Space'
+  'x-group-name': 'Files'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        space_id:
+          type: 'string'
+}
