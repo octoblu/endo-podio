@@ -7,7 +7,7 @@ class PodioRequest
 
   request: (method, path, qs, body, callback) =>
     options = {
-      uri: 'https://api.podio.com/' + path
+      uri: @base_uri + path
       method: method
       json: true
       headers:
@@ -19,5 +19,21 @@ class PodioRequest
 
     request options, (error, res, body) =>
       callback error, body
+
+  refreshToken: (refreshToken, clientId, clientSecret, callback) =>
+    options = {
+      uri: 'https://podio.com/oauth/token'
+      method: 'POST'
+      json: true
+      qs:
+        refresh_token: refreshToken
+        client_id: clientId
+        client_secret: clientSecret
+        grant_type: 'refresh_token'
+    }
+
+    request options, (error, res, body) =>
+      return callback error, body
+
 
 module.exports = PodioRequest
