@@ -1,0 +1,9 @@
+{
+  type: 'object'
+  title: 'Refresh Token'
+  'x-group-name': 'Authentication'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+}
