@@ -2,13 +2,13 @@ language: node_js
 node_js:
   - '5'
 notifications:
-  webhooks: >-
-    https://sqrtofsaturn:57be102bf79af666ccbf7fd1@deploy-state.octoblu.com/deployments/travis-ci/org
+  webhooks:
+    - 'https://beekeeper.octoblu.com/webhooks/travis:ci'
 branches:
   only:
-  - "/^v[0-9]/"
+    - '/^v[0-9]/'
 after_success:
-- npm run coverage
-- npm run mocha:json
-- bash <(curl -s https://codecov.io/bash)
-- bash <(curl -s https://codecov.octoblu.com/bash)
+  - npm run coverage
+  - 'npm run mocha:json'
+  - 'bash <(curl -s https://codecov.io/bash)'
+  - 'bash <(curl -s https://codecov.octoblu.com/bash)'
