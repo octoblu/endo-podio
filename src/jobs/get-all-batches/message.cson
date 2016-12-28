@@ -1,0 +1,9 @@
+{
+  type: 'object'
+  title: 'Get All Batches'
+  'x-group-name': 'Batch'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+}
