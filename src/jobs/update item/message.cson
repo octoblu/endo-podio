@@ -1,0 +1,60 @@
+{
+  type: 'object'
+  title: 'Update Item'
+  'x-group-name': 'Items'
+  required: ['data']
+  properties:
+    data:
+      type: 'object'
+      properties:
+        item_id:
+          type: 'string'
+        external_id:
+          type: 'string'
+        reminder:
+          type: 'number'
+          title: 'Reminder before Due (Minutes)'
+        linked_account_id:
+          type: 'string'
+        field_collection:
+          title: 'Fields'
+          type: 'array'
+          items:
+            type: 'object'
+            properties:
+              key:
+                type: 'string'
+                title: 'field_id/external_id'
+              sub_fields:
+                type: 'array'
+                items:
+                  type: 'object'
+                  properties:
+                    sub_id:
+                      type: 'string'
+                    value:
+                      type: 'string'
+        file_ids:
+          type: 'array'
+          items:
+            type: 'string'
+        tags:
+          type: 'array'
+          items:
+            type: 'string'
+        hook:
+          type: 'boolean'
+          description: 'True if hooks should be executed for the change, false otherwise.'
+          default: true
+        silent:
+          type: 'boolean'
+          description: 'If set to true, the object will not be bumped up in the stream and notifications will not be generated. '
+          default: false
+        ref:
+          type: 'object'
+          properties:
+            ref_type:
+              type: 'string'
+            id:
+              type: 'string'
+}
