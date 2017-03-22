@@ -49,4 +49,4 @@ class CreateItem
     error.code = code
     return error
 
-module.exports = CreateItem
+module.exports = UpdateItem
