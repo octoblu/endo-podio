@@ -1,5 +1,14 @@
 {
   angular: [
-    'data'
+    'data.item_id'
+    'data.external_id'
+    'data.reminder'
+    'data.linked_account_id'
+    'data.field_collection'
+    'data.file_ids'
+    'data.tags'
+    'data.hook'
+    'data.silent'
+    'data.ref'
   ]
 }
