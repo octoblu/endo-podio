@@ -1,7 +1,7 @@
 {
   "name": "endo-podio",
-  "version": "1.2.1",
-  "description": "Put some description here",
+  "version": "1.2.2",
+  "description": "Octoblu Endo for Podio",
   "keywords": [],
   "homepage": "https://github.com/octoblu/endo-podio",
   "bugs": "https://github.com/octoblu/endo-podio/issues",
@@ -22,18 +22,18 @@
     "test:watch": "mocha -w -R mocha-multi --reporter-options spec=-,mocha-osx-reporter=-"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
+    "@octoblu/shmock": "^0.9.1",
+    "chai": "^4.0.2",
     "istanbul": "^0.4.0",
-    "mocha": "^2.3.4",
-    "mocha-istanbul": "^0.2.0",
+    "mocha": "^3.4.2",
+    "mocha-istanbul": "^0.3.0",
+    "mocha-multi": "^0.11.0",
+    "mocha-osx-reporter": "^0.1.2",
+    "nyc": "^11.0.3",
     "passport-strategy": "^1.0.0",
     "request": "^2.66.0",
-    "@octoblu/shmock": "^0.7.2",
-    "sinon": "^1.17.2",
-    "sinon-chai": "^2.8.0",
-    "nyc": "^8.3.0",
-    "mocha-osx-reporter": "^0.1.2",
-    "mocha-multi": "^0.9.1"
+    "sinon": "^2.3.5",
+    "sinon-chai": "^2.8.0"
   },
   "dependencies": {
     "body-parser": "^1.14.1",
