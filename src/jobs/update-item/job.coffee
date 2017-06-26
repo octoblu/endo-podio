@@ -22,7 +22,7 @@ class CreateItem
     body.linked_account_id = data.linked_account_id if data.linked_account_id?
     body.ref = { type: data.ref.ref_type, id: data.ref.ref_id } if data.ref?
 
-    @podio.request 'POST', "item/#{data.item_id}/", qs, body, (error, body) =>
+    @podio.request 'PUT', "item/#{data.item_id}/", qs, body, (error, body) =>
       return callback @_userError(401, error) if error?
       return callback null, {
         metadata:
