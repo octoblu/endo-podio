@@ -1,13 +1,16 @@
 PodioRequest = require './podio-request'
 moment    = require 'moment'
+_ = require 'lodash'
 
 class RefreshTokenHandler
   constructor: () ->
     @podio = new PodioRequest
 
   isTokenValid: ({credentials}, callback) =>
-    { expires_in, timestamp } = credentials
-    return callback null, false if !timestamp? || !expires_in?
+    expires_in = _.get credentials, 'expires_in', false
+    timestamp = _.get credentials, 'timestamp', false
+
+    return callback null, false if !timestamp || !expires_in
 
     now = moment().utc()
     expiration = moment(timestamp).add(expires_in, 's')

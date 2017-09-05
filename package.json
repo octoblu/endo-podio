@@ -1,6 +1,6 @@
 {
   "name": "endo-podio",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Octoblu Endo for Podio",
   "keywords": [],
   "homepage": "https://github.com/octoblu/endo-podio",
@@ -42,7 +42,7 @@
     "cookie-session": "^2.0.0-alpha.1",
     "cors": "^2.5.3",
     "debug": "^2.2.0",
-    "endo-core": "^18.2.4",
+    "endo-core": "^18.2.5",
     "errorhandler": "^1.4.2",
     "express": "^4.13.3",
     "express-meshblu-auth": "^5.0.0",
