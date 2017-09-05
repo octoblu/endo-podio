@@ -18,7 +18,8 @@ class RefreshTokenHandler
     callback null, isValid
 
   refreshToken: (secrets, callback) =>
-    refresh_token = secrets.credentials.refreshToken
+    refresh_token = _.get secrets, 'credentials.refreshToken', false
+    return callback @_userError 'Missing refreshToken, re-auth Podio', 422 if !refresh_token
     @podio.refreshToken refresh_token, (error, body) =>
       return callback error if error?
       return callback error if !body.access_token
@@ -32,5 +33,9 @@ class RefreshTokenHandler
       secrets.credentials = credentials
       return callback null, secrets
 
+   _userError: (message, code) =>
+      error = new Error message
+      error.code = code if code?
+      return error
 
 module.exports = RefreshTokenHandler
