@@ -1,4 +1,5 @@
 _ = require 'lodash'
+moment = require 'moment'
 PassportPodio = require('passport-podio').Strategy
 
 class PodioStrategy extends PassportPodio
@@ -23,11 +24,12 @@ class PodioStrategy extends PassportPodio
       ref:
         type: profile._json.type
         id: profile._json.user_id
-      expires_in: profile._json.push.expires_in
       secrets:
         credentials:
           secret: accessToken
           refreshToken: refreshToken
+          expires_in: profile._json.push.expires_in
+          timestamp: moment().utc().format()
     }
 
 module.exports = PodioStrategy

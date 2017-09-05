@@ -5,6 +5,7 @@ Endo            = require 'endo-core'
 OctobluStrategy = require 'endo-core/octoblu-strategy'
 MessageHandler  = require 'endo-core/message-handler'
 ApiStrategy     = require './src/api-strategy'
+RefreshTokenHandler = require './src/refresh-token-handler'
 
 MISSING_SERVICE_URL = 'Missing required environment variable: ENDO_PODIO_SERVICE_URL'
 MISSING_MANAGER_URL = 'Missing required environment variable: ENDO_PODIO_MANAGER_URL'
@@ -19,6 +20,7 @@ class Command
     meshbluConfig   = new MeshbluConfig().toJSON()
     apiStrategy     = new ApiStrategy process.env
     octobluStrategy = new OctobluStrategy process.env, meshbluConfig
+    refreshTokenHandler = new RefreshTokenHandler
 
     jobsPath = path.join __dirname, 'src/jobs'
 
@@ -34,6 +36,8 @@ class Command
       serviceUrl:      process.env.ENDO_PODIO_SERVICE_URL
       userDeviceManagerUrl: process.env.ENDO_PODIO_MANAGER_URL
       staticSchemasPath: process.env.ENDO_PODIO_STATIC_SCHEMAS_PATH
+      healthcheckService: healthcheck: (callback) => callback(null, healthy: true)
+      refreshTokenHandler: refreshTokenHandler
     }
 
   run: =>

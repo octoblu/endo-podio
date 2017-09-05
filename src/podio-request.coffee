@@ -2,8 +2,13 @@ request = require 'request'
 
 class PodioRequest
   constructor: (access_token) ->
+    @access_token = access_token if access_token?
     @base_uri = 'https://api.podio.com/'
-    @access_token = access_token
+    @clientID = process.env.ENDO_PODIO_PODIO_CLIENT_ID
+    @clientSecret = process.env.ENDO_PODIO_PODIO_CLIENT_SECRET
+
+  setToken: (accessToken) =>
+    @access_token = accessToken if accessToken?
 
   request: (method, path, qs, body, callback) =>
     options = {
@@ -20,15 +25,15 @@ class PodioRequest
     request options, (error, res, body) =>
       callback error, body
 
-  refreshToken: (refreshToken, clientId, clientSecret, callback) =>
+  refreshToken: (refreshToken, callback) =>
     options = {
       uri: 'https://podio.com/oauth/token'
       method: 'POST'
       json: true
       qs:
         refresh_token: refreshToken
-        client_id: clientId
-        client_secret: clientSecret
+        client_id: @clientID
+        client_secret: @clientSecret
         grant_type: 'refresh_token'
     }
 
